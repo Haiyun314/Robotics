@@ -10,8 +10,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.15815100034879126 -0.29026233253070116 0.9437881326879 5.236071101129244
-  position -13.687962931057813 16.70110596238365 5.566887223143247
+  orientation -0.18489398035747504 -0.14240040736159928 0.9723869291649391 4.4272100427438055
+  position -3.6882347200307417 12.303044995237121 4.976975409984578
   follow "robot"
 }
 TexturedBackground {
@@ -27,8 +27,8 @@ RectangleArena {
   wallHeight 0.5
 }
 Robot {
-  translation -8.492151046225846 4.702218022965935 0.19893812105137507
-  rotation -0.5768087811977815 -0.5785965337943212 0.5766434609135239 2.092602195560125
+  translation -7.85704 3.56215 0.197188
+  rotation -0.9349945464926928 0.25099687825713124 -0.25057087846375703 1.63628
   children [
     Camera {
       translation 0.1 -0.13 0.01
@@ -48,7 +48,7 @@ Robot {
     }
     DEF w4body HingeJoint {
       jointParameters HingeJointParameters {
-        position 3784.983616792144
+        position 3803.3444366097333
         axis 0 0 1
         anchor -0.2 0.1 -0.1
       }
@@ -58,8 +58,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.20097930975733952 0.10068518635759949 -0.10031843426962617
-        rotation 0 0 -1 5.457680712178138
+        translation -0.20054295692586105 0.10106476557143827 -0.10031843426962617
+        rotation 0 0 1 0.33676849105203244
         children [
           DEF w1body Shape {
             appearance GenericTireAppearance {
@@ -74,13 +74,11 @@ Robot {
         boundingObject USE w1body
         physics Physics {
         }
-        linearVelocity -0.00011034643080607556 -0.0037829605432790894 -0.0002423647239705179
-        angularVelocity -4.983109061763949 -0.0010814691423516336 -0.0008766041171373647
       }
     }
     DEF w3body HingeJoint {
       jointParameters HingeJointParameters {
-        position -1291.3344666893595
+        position -1272.9736473599569
         axis 0 0 1
         anchor -0.2 0.1 0.1
       }
@@ -90,8 +88,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.2010864574950695 0.10021400768617773 0.10034226342389552
-        rotation 0 0 -1 4.217853056388249
+        translation -0.20085878346876762 0.10069905660150472 0.10034226342389552
+        rotation 0 0 1 1.576595658655189
         children [
           DEF w1body Shape {
             appearance GenericTireAppearance {
@@ -106,13 +104,11 @@ Robot {
         boundingObject USE w1body
         physics Physics {
         }
-        linearVelocity -0.00011058640893334488 -0.00142031425555778 0.00026943291100356675
-        angularVelocity -4.983113850357348 -0.0010814137242867927 -0.0008766057561662461
       }
     }
     DEF w2body HingeJoint {
       jointParameters HingeJointParameters {
-        position 4105.700661222462
+        position 4124.061475991018
         axis 0 0 1
         anchor 0.2 0.1 -0.1
       }
@@ -122,8 +118,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.20031285350201156 0.10004042203455173 -0.10059938630978404
-        rotation 0 0 -0.9999999999999999 2.010086498344214
+        translation 0.20029520479799556 0.09988880026151746 -0.10059938630978404
+        rotation 0 0 1 3.78435765585205
         children [
           DEF w1body Shape {
             appearance GenericTireAppearance {
@@ -138,13 +134,11 @@ Robot {
         boundingObject USE w1body
         physics Physics {
         }
-        linearVelocity -9.648505400741332e-05 0.0002476113444047808 0.0002197488553826836
-        angularVelocity -4.983112234818969 -0.0010795977653245508 -0.0008760095183363362
       }
     }
     DEF w1body HingeJoint {
       jointParameters HingeJointParameters {
-        position -436.14776027313223
+        position -417.7869453486954
         axis 0 0 1
         anchor 0.2 0.1 0.1
       }
@@ -154,8 +148,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.2003407733709642 0.10015223228016595 0.10004138756786851
-        rotation 0 0 -1 3.4208174782040004
+        translation 0.20037235250563867 0.09997441154503639 0.10004138756786851
+        rotation 0 0 1 2.373626831873679
         children [
           DEF w1body Shape {
             appearance GenericTireAppearance {
@@ -170,8 +164,6 @@ Robot {
         boundingObject USE w1body
         physics Physics {
         }
-        linearVelocity -9.690660207057457e-05 -0.00028163372860588563 -0.00028255374907664436
-        angularVelocity -4.983108017643472 -0.0010795966936064912 -0.0008759084786569051
       }
     }
     DEF body Shape {
@@ -187,16 +179,14 @@ Robot {
     mass 1
   }
   controller "my_controller1"
-  linearVelocity -0.0002540559503714654 -0.0013877969760018808 -0.0016733141059029908
-  angularVelocity 0.016870380854412607 -0.0015037134426351363 -4.535481048996375e-05
 }
 DEF balance Robot {
-  translation -1.8462602482070343 0.840000062839377 0.18782951956665958
-  rotation 5.394319108587654e-08 -0.999999999999998 3.1233892212267845e-08 1.639495706696886
+  translation -1.8344768682605954 0.8400000593538859 0.18796779232129804
+  rotation 6.310143275589707e-08 -0.9999999999999977 2.4039511012992177e-08 1.5920925222942286
   children [
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -0.8011603257786454
+        position -0.6490937528386136
         axis 0 1 0
         anchor 2 0 0
       }
@@ -205,8 +195,8 @@ DEF balance Robot {
         }
       ]
       endPoint DEF beam Solid {
-        translation 1.836375366885287 0 -0.47246902484509556
-        rotation 1.685873463543656e-07 -0.9999999999999767 -1.352965365899056e-07 0.8011603257786573
+        translation 1.8483399838075476 0 -0.9884327187464534
+        rotation 1.9297983783356307e-07 -0.999999999999965 -1.8065517037762805e-07 0.6490937528386297
         children [
           Solid {
             translation 0 0 2.41
@@ -235,8 +225,6 @@ DEF balance Robot {
         boundingObject USE beam
         physics Physics {
         }
-        linearVelocity 0.00012475183410867453 2.8479167603647553e-10 9.09489533048878e-06
-        angularVelocity -1.9917837121581995e-10 -1.4569876468741703e-05 -1.0695051685415703e-11
       }
     }
     Solid {
@@ -259,6 +247,4 @@ DEF balance Robot {
   boundingObject USE base
   physics Physics {
   }
-  linearVelocity -1.9798078202965075e-05 4.2463904393596006e-11 2.1490687538838475e-06
-  angularVelocity -2.0764942746609194e-10 6.59884582030182e-05 -8.668712467853092e-12
 }
