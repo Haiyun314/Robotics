@@ -3,4 +3,4 @@ A starting point for simulating and controlling robots with Webots. Features a b
 
 
 # Robot and Balance system
-![video](./records/balancesystem.mp4)
+![video](./records/balancesystem.gif)
