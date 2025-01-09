@@ -1,0 +1,102 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/ScuffedPlastic.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BlanketFabric.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2908127168220813 0.3057312098083581 0.9066181065275929 1.6187947477192504
+  position 0.005220573170233039 -3.8114458228993664 2.6939972756176473
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+  floorAppearance Parquetry {
+    type "light strip"
+  }
+}
+DEF balance Robot {
+  rotation 0 1 0 0
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 0 0.5
+      }
+      endPoint DEF motor Solid {
+        translation 0 0 0.5
+        rotation 0 1 0 0
+        children [
+          DEF table Shape {
+            appearance ScuffedPlastic {
+            }
+            geometry Box {
+              size 2 0.3 0.05
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE table
+        physics Physics {
+        }
+        locked TRUE
+      }
+    }
+    DEF base Solid {
+      translation 0 0 0.24968638931382292
+      children [
+        DEF base Shape {
+          appearance BrushedAluminium {
+          }
+          geometry Box {
+            size 0.1 0.1 0.5
+          }
+        }
+      ]
+      boundingObject USE base
+      physics Physics {
+      }
+      locked TRUE
+    }
+  ]
+  name "balance"
+  controller "<none>"
+}
+DEF object Robot {
+  translation 0.617908864002483 0 0.7703615863659231
+  rotation 0 1 0 0.6574024083873781
+  children [
+    DEF altimeter Altimeter {
+      children [
+        DEF object Shape {
+          appearance BlanketFabric {
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+      boundingObject USE object
+      physics Physics {
+      }
+    }
+  ]
+  name "object"
+  boundingObject USE object
+  physics Physics {
+  }
+  controller "<none>"
+}
+Robot {
+  controller "balanc_controller"
+  supervisor TRUE
+}

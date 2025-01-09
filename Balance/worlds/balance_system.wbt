@@ -1,0 +1,171 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/LedStrip.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/abstract/GenericTireAppearance.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.019268855940815965 -0.9970463227120748 0.07434609308538727 5.774697921722041
+  position -7.603610315301819 -0.049009583161440884 5.0483037507776025
+}
+TexturedBackground {
+  texture "factory"
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+  floorTileSize 1 1
+  wallThickness 0.05
+  wallHeight 0.25
+}
+Robot {
+  translation -3.1649e-17 9.16864e-31 1.16
+  rotation -7.253437023749283e-15 -0.2503902623286518 -0.9681449873500296 1.0896925782750714e-16
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.15 0.1 -0.1
+      }
+      device [
+        DEF w4 RotationalMotor {
+        }
+      ]
+      endPoint DEF wheel4 Solid {
+        translation -0.15 0.1 -0.1
+        children [
+          Solid {
+            children [
+              DEF wheel4 Shape {
+                appearance GenericTireAppearance {
+                }
+                geometry Cylinder {
+                  height 0.1
+                  radius 0.1
+                }
+              }
+            ]
+            boundingObject USE wheel4
+            physics Physics {
+            }
+          }
+        ]
+        name "wheel4"
+        boundingObject USE wheel4
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.15 0.1 -0.1
+      }
+      device [
+        DEF w3 RotationalMotor {
+        }
+      ]
+      endPoint DEF wheel3 Solid {
+        translation 0.15 0.1 -0.1
+        children [
+          Solid {
+            children [
+              DEF wheel3 Shape {
+                appearance GenericTireAppearance {
+                }
+                geometry Cylinder {
+                  height 0.1
+                  radius 0.1
+                }
+              }
+            ]
+            boundingObject USE wheel3
+            physics Physics {
+            }
+          }
+        ]
+        name "wheel3"
+        boundingObject USE wheel3
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.15 0.1 0.1
+      }
+      device [
+        DEF w2 RotationalMotor {
+        }
+      ]
+      endPoint DEF wheel2 Solid {
+        translation -0.15 0.1 0.1
+        children [
+          Solid {
+            children [
+              DEF wheel2 Shape {
+                appearance GenericTireAppearance {
+                }
+                geometry Cylinder {
+                  height 0.1
+                  radius 0.1
+                }
+              }
+            ]
+            boundingObject USE wheel2
+            physics Physics {
+            }
+          }
+        ]
+        name "wheel2"
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.15 0.1 0.1
+      }
+      device [
+        DEF w1 RotationalMotor {
+        }
+      ]
+      endPoint DEF wheel1 Solid {
+        translation 0.15 0.1 0.1
+        children [
+          Solid {
+            children [
+              DEF wheel1 Shape {
+                appearance GenericTireAppearance {
+                }
+                geometry Cylinder {
+                  height 0.1
+                  radius 0.1
+                }
+              }
+            ]
+            boundingObject USE wheel1
+            physics Physics {
+            }
+          }
+        ]
+        name "wheel1(3)"
+      }
+    }
+    DEF body Solid {
+      children [
+        DEF body Shape {
+          appearance LedStrip {
+          }
+          geometry Box {
+            size 0.4 0.2 0.2
+          }
+        }
+      ]
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+}

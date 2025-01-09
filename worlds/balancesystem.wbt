@@ -5,13 +5,12 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/abstract/GenericTireAppearance.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/CementTiles.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedSteel.proto"
 
 WorldInfo {
 }
 Viewpoint {
   orientation -0.18489398035747504 -0.14240040736159928 0.9723869291649391 4.4272100427438055
-  position -3.6882347200307417 12.303044995237121 4.976975409984578
+  position 1.9932611985200872 10.279380911041466 5.452485174542108
   follow "robot"
 }
 TexturedBackground {
@@ -27,8 +26,8 @@ RectangleArena {
   wallHeight 0.5
 }
 Robot {
-  translation -7.85704 3.56215 0.197188
-  rotation -0.9349945464926928 0.25099687825713124 -0.25057087846375703 1.63628
+  translation -6.682957269083748 2.881516565484771 0.19864668559539592
+  rotation -0.9353106174737401 0.24991205697632368 -0.2504755728983443 1.638730339241704
   children [
     Camera {
       translation 0.1 -0.13 0.01
@@ -48,7 +47,7 @@ Robot {
     }
     DEF w4body HingeJoint {
       jointParameters HingeJointParameters {
-        position 3803.3444366097333
+        position 3816.915534808006
         axis 0 0 1
         anchor -0.2 0.1 -0.1
       }
@@ -58,8 +57,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.20054295692586105 0.10106476557143827 -0.10031843426962617
-        rotation 0 0 1 0.33676849105203244
+        translation -0.20118987672658403 0.10011278883364233 -0.10031843426962617
+        rotation 0 0 1 1.34149607496578
         children [
           DEF w1body Shape {
             appearance GenericTireAppearance {
@@ -78,7 +77,7 @@ Robot {
     }
     DEF w3body HingeJoint {
       jointParameters HingeJointParameters {
-        position -1272.9736473599569
+        position -1259.4025371619218
         axis 0 0 1
         anchor -0.2 0.1 0.1
       }
@@ -88,8 +87,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.20085878346876762 0.10069905660150472 0.10034226342389552
-        rotation 0 0 1 1.576595658655189
+        translation -0.2010505918533867 0.09965007724290442 0.10034226342389552
+        rotation 0 0 1 2.5813352423310736
         children [
           DEF w1body Shape {
             appearance GenericTireAppearance {
@@ -108,7 +107,7 @@ Robot {
     }
     DEF w2body HingeJoint {
       jointParameters HingeJointParameters {
-        position 4124.061475991018
+        position 4137.632583666774
         axis 0 0 1
         anchor 0.2 0.1 -0.1
       }
@@ -118,10 +117,10 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.20029520479799556 0.09988880026151746 -0.10059938630978404
-        rotation 0 0 1 3.78435765585205
+        translation 0.20025217624430036 0.10018952149326328 -0.10059938630978404
+        rotation 0 0 1 4.789094717249015
         children [
-          DEF w1body Shape {
+          DEF w2body Shape {
             appearance GenericTireAppearance {
             }
             geometry Cylinder {
@@ -131,14 +130,14 @@ Robot {
           }
         ]
         name "w2body"
-        boundingObject USE w1body
+        boundingObject USE w2body
         physics Physics {
         }
       }
     }
     DEF w1body HingeJoint {
       jointParameters HingeJointParameters {
-        position -417.7869453486954
+        position -404.21583774848153
         axis 0 0 1
         anchor 0.2 0.1 0.1
       }
@@ -148,8 +147,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.20037235250563867 0.09997441154503639 0.10004138756786851
-        rotation 0 0 1 2.373626831873679
+        translation 0.2002212936470024 0.1003005499613695 0.10004138756786851
+        rotation 0 0 0.9999999999999999 3.378363817728356
         children [
           DEF w1body Shape {
             appearance GenericTireAppearance {
@@ -179,14 +178,16 @@ Robot {
     mass 1
   }
   controller "my_controller1"
+  linearVelocity 0.4308697270868452 -0.2485985955645576 -0.00223880978285939
+  angularVelocity -0.008266187069090344 -0.01608694615305104 0.00011096855195692995
 }
 DEF balance Robot {
-  translation -1.8344768682605954 0.8400000593538859 0.18796779232129804
-  rotation 6.310143275589707e-08 -0.9999999999999977 2.4039511012992177e-08 1.5920925222942286
+  translation -1.8217901887449943 0.8400000697440551 0.19368213637469445
+  rotation 4.7243600577019504e-08 -0.9999999999999978 4.6365974167127136e-08 1.5460466098758427
   children [
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -0.6490937528386136
+        position 0.47124998330049783
         axis 0 1 0
         anchor 2 0 0
       }
@@ -195,25 +196,9 @@ DEF balance Robot {
         }
       ]
       endPoint DEF beam Solid {
-        translation 1.8483399838075476 0 -0.9884327187464534
-        rotation 1.9297983783356307e-07 -0.999999999999965 -1.8065517037762805e-07 0.6490937528386297
+        translation 1.0441346180769566 0 -0.29380498913584724
+        rotation 9.219769489231549e-08 0.9999999999999347 -3.491076954174706e-07 0.47124998330053175
         children [
-          Solid {
-            translation 0 0 2.41
-            children [
-              DEF weight Shape {
-                appearance BrushedSteel {
-                }
-                geometry Box {
-                  size 0.3 0.3 0.3
-                }
-              }
-            ]
-            name "weight"
-            boundingObject USE weight
-            physics Physics {
-            }
-          }
           DEF beam Shape {
             geometry Cylinder {
               height 5
@@ -247,4 +232,6 @@ DEF balance Robot {
   boundingObject USE base
   physics Physics {
   }
+  linearVelocity 1.556117355548523e-06 -9.814157068225863e-10 -5.192800501764456e-06
+  angularVelocity 4.041396081447607e-09 -6.51277879137212e-05 4.75033898851516e-10
 }
