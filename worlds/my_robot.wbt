@@ -6,6 +6,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "../protos/robot.proto"
 
 WorldInfo {
+  gravity 4
 }
 Viewpoint {
   orientation -0.24769974042635526 0.4753285433185478 0.8442201220649646 1.1060557214966267
